@@ -15,9 +15,16 @@ export default function BookTrip() {
 
   const checkoutHandler = async (amount) => {
     // Fetch the Razorpay key and initiate the payment process
-    const response = await fetch("/api/pay/getkey");
+    console.log("request");
+    // const response = await fetch("/api/pay/get-key");
+    // console.log(response);
+    
+    const response = await fetch(`/api/pay/get-key`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
     const { key } = await response.json();
-
+   // console.log(response);
     const razorOptions = {
       key: key,
       amount: amount * 100, // Amount in paise

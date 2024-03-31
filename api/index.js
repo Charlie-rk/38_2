@@ -32,6 +32,13 @@ const app=express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname,'/client/dist')))
 app.use(cookieParser());
+
+  app.get('/api/pay/get-key',(req,res)=>{
+    // console.log("ghgh");
+    console.log({key:process.env.RAZORPAY_API_KEY});
+    res.status(200).json({key:process.env.RAZORPAY_API_KEY});
+})
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
   });
@@ -47,10 +54,7 @@ app.use("/api/send",notificationRoute);
 
 
 
-app.get('/api/pay/getkey',(req,res)=>{
-    console.log({key:process.env.RAZORPAY_API_KEY});
-    res.status(200).json({key:process.env.RAZORPAY_API_KEY});
-})
+
 app.use((err,req,res,next)=>{
     const statusCode=err.statusCode||500;
     const message=err.message||'Internal Server Error';
