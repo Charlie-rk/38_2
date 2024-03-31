@@ -39,15 +39,17 @@ app.use(cookieParser());
     res.status(200).json({key:process.env.RAZORPAY_API_KEY});
 })
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-  });
 
 app.use("/api/user",userRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/bus",bookingRoute);
 app.use("/api/pay",paymentRoute);
 app.use("/api/send",notificationRoute);
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  });
+
 
 // app.use('/api/pdf',pdfDetailsRoute);
 
