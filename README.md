@@ -48,7 +48,7 @@ For more detailed information on these aspects, please refer to the respective s
 Campus Cruiser was developed by:
 
 - **Rustam Kumar**: [GitHub](https://github.com/rustamkumar)
-- **Sangam Kumar Mishra**: [GitHub](https://github.com/sangamkumarmishra)
+- **Sangam Kumar Mishra**: [GitHub](https://github.com/sangam2ishra)
 
 Feel free to reach out to them for any inquiries or contributions related to the project.
 ## Features
